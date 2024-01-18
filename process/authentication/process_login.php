@@ -16,7 +16,7 @@ if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
     if ($user && password_verify($_POST['password'], $user['password'])) {
         $_SESSION['id'] = $user['id'];
         $_SESSION['pseudo'] = $user['pseudo'];
-        // $_SESSION['score'] = 0;
+        $_SESSION['score'] = 0;
     }else{
         header('Location: ../../login.php?error=Pseudo ou Mot de passe incorrect');
         die;

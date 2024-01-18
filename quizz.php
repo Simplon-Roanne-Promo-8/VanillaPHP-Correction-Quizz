@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    var_dump($_SESSION['score']);
 
     require_once './config/connexion.php';
 
@@ -27,7 +29,7 @@
     <form action="./process/quizz/process_response_quizz.php" method="post">
         <div class="d-flex justify-content-center">
             <?php foreach ($answers as $answer) { ?>
-                <button class="btn btn-warning m-2" type="submit" value="<?= $answer['id'] ?>" name='response'> <?= $answer['content']?></button>
+                <button class="btn btn-warning m-2" type="submit" value="<?= $answer['id'] ?>" name='response'><?= $answer['content']?></button>
             <?php } ?>
         </div>
     </form>
